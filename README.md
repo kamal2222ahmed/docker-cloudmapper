@@ -73,6 +73,8 @@ Another improvement would be to serve `/web` via nginx instead of the built-in `
 
 "Debug Mode" is not yet working in this build.  I added the variables for it, and the code is ready, but I don't personally have any need for demo data, so I didn't finish setting it up.
 
+Patch: https://github.com/syucream/docker-cloudmapper/commit/f2f1b5a5bb308828c9d6c4f3c0da3d358109423d
+
 ## License
 
 Cloudmapper is `Copyright 2018 Duo Security`, see https://github.com/duo-labs/cloudmapper/blob/master/LICENSE
