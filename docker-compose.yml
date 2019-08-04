@@ -8,9 +8,9 @@ services:
         container_name: cloudmapper
         env_file: .env
         volumes:
-            - ./account-data:/opt/cloudmapper/account-data
+            #- ./account-data:/opt/cloudmapper/account-data
             - ./config.json:/opt/cloudmapper/config.json
-            - ./web:/opt/cloudmapper/web
+            #- ./web:/opt/cloudmapper/web
         ports:
             - ${EXTERNAL_PORT}:8000
         # TODO: switch to environment variables instead loading the .env manually

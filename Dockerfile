@@ -32,9 +32,12 @@ libpng-dev \
 git
 
 RUN git clone https://github.com/duo-labs/cloudmapper.git .
-RUN pip install pipenv && pipenv install
+RUN git checkout -b 2.5.1 refs/tags/2.5.1
+COPY entrypoint.sh ./entrypoint.sh
+RUN pip install pipenv && pipenv install --skip-lock
+#RUN pip install pipenv && pipenv install
 RUN pip install --upgrade awscli
-#RUN chmod +x entrypoint.sh && touch config.json
+RUN chmod +x entrypoint.sh && touch config.json
 
 VOLUME /opt/cloudmapper/web /opt/cloudmapper/account-data
 
@@ -43,7 +46,7 @@ COPY entrypoint.sh ./entrypoint.sh
 COPY .env ./.env
 
 # Keep the container alive for testing
-#CMD tail -f /dev/null
+CMD tail -f /dev/null
 
 CMD ["sh","entrypoint.sh"]
 
